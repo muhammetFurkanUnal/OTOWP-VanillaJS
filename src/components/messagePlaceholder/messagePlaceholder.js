@@ -3,6 +3,7 @@ export function MessagePlaceholder () {
 
   const messagePlaceholder = document.createElement("div");
   messagePlaceholder.className = "message-placeholder";
+  messagePlaceholder.style.display = "flex";
 
   // add image
   const otowpIcon = document.createElement("img");
@@ -22,5 +23,6 @@ export function MessagePlaceholder () {
   placeholderText2.innerText = "Mesaj göndermek için bir sohbete tıkla veya kategori seç.";
   messagePlaceholder.appendChild(placeholderText2);
 
+  
   return messagePlaceholder;
 }

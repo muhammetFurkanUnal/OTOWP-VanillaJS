@@ -18,12 +18,3 @@
   align-items: center;
   width: 80%;
 }
-
-.mainpage-right-half-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100%;
-  width: 80%;
-}

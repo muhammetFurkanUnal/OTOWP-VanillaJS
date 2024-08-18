@@ -1,6 +1,6 @@
 import { Listbox } from "../../listbox/listboxComponent.js";
 import { Sidebar } from "../../sidebar/sidebarComponent.js";
-import { MessagePlaceholder } from "../../messagePlaceHolder/messagePlaceHolder.js";
+import { MessageContentComponent } from "../../messageContent/messageContentComponent.js";
 
 export function mainPage () {
 
@@ -26,16 +26,11 @@ export function mainPage () {
   const mainPageRightHalf = document.createElement("div");
   mainPageRightHalf.className = "mainpage-right-half";
   mainPage.appendChild(mainPageRightHalf);
-  //
-  // store right half contents in this div
-  const mainPageRightHalfContent = document.createElement("div");
-  mainPageRightHalfContent.className = "mainpage-right-half-content";
-  mainPageRightHalf.appendChild(mainPageRightHalfContent);
-  // add right half contents
-  mainPageRightHalfContent.appendChild(MessagePlaceholder());
-
-
+  // 
+  // fill right half
+  mainPageRightHalf.appendChild(MessageContentComponent());
   
+
 
   return mainPage;
 }

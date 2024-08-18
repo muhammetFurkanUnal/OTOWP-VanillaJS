@@ -1,0 +1,91 @@
+.messagebox {
+  display: none;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 80%;
+}
+
+.messagebox-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 7%;
+  color: rgba(255, 255, 255, 0.3);
+  margin: 20px;
+}
+
+.messagebox-icon {
+  height: 100%;
+  opacity: 50%;
+  margin: 7px;
+}
+
+.label-text {
+  font-size:7vh;
+}
+
+.label-p {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 2.5vh;
+}
+
+.messagebox-textarea {
+  background-color: rgb(84, 84, 84);
+  color:rgba(255, 255, 255, 0.7);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 80%;
+  padding: 7px;
+  height: 300px;
+  min-height: 100px;
+  border: 0px solid rgb(27, 27, 27);
+  border-radius: 5px;
+  resize: vertical;
+  margin: 20px;
+}
+
+.messagebox-textarea:focus {
+  outline: none;
+}
+
+.messagebox-lower {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
+  height: 30%;
+}
+
+.send-btn {
+  height: 40px;
+  width: 100px;
+  background-color: rgb(140, 224, 105);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1); 
+  border-radius: 5px;
+  border: 0;
+  transition: box-shadow 0.1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+}
+
+.send-btn:hover {
+  box-shadow: 0px 0px 0px 0px rgb(37, 65, 37); 
+  border: 1px black solid;
+  cursor: pointer;
+}
+
+.send-btn:active {
+  border: 2px rgb(44, 44, 44) solid;
+  background-color: rgb(128, 224, 87);
+}
+
+.messagebox-footer {
+  margin-bottom: 20px;
+  color:rgba(255,255,255,0.2);
+  text-align: center;
+  overflow: hidden;
+  font-size: 0.8em;
+}
