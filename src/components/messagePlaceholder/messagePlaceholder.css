@@ -1,0 +1,22 @@
+
+.message-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.icon {
+  height: 180px;
+  aspect-ratio: 1;
+  opacity: 50%;
+  margin: 30px;
+}
+
+.placeholder-text {
+  font-size: 1.7vw;
+  margin: 5px;
+  color: rgba(255, 255, 255, 0.3);
+}

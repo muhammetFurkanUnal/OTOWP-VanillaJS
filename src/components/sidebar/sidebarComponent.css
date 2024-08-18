@@ -1,0 +1,25 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+  background-color: black;
+  color: white;
+  height: 100%;
+}
+
+.sidebar-upper-half {
+  display: flex;
+  flex-direction: column;
+  max-height: 50%;
+  max-width: 40px;
+
+}
+
+.sidebar-lower-half {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  max-height: 50%;
+  max-width: 40px;
+}

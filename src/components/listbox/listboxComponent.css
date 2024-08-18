@@ -1,0 +1,46 @@
+.listbox {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  min-width: 200px;
+  background-color: rgb(27, 27, 27);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.selectbox {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(44, 44, 44);
+  color: white;
+  width: 80%;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+option {
+  padding: 10px;
+}
+
+.selectbox-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(27, 27, 27);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.selectbox:focus {
+  outline: none;
+}

@@ -1,0 +1,33 @@
+.listbox-element {
+  text-align: left;
+  height: 10%;
+  min-height: 6%;
+  width: 100%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  padding: 10px 30px;
+  color: white;
+  user-select: none;
+  align-items: center;
+}
+
+.listbox-element:hover {
+  background-color: rgb(39, 39, 39);
+  /* border: 1px solid gray; */
+}
+
+.listbox-element-selected {
+  background-color: rgb(57, 135, 26);
+}
+
+.listbox-element:hover {
+  background-color: rgb(39, 39, 39);
+  /* border: 1px solid gray; */
+}
+
+.listbox-element-selected:hover {
+  background-color: rgb(72, 194, 78);
+  /* border: 1px solid gray; */
+
+}

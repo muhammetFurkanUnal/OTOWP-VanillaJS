@@ -1,0 +1,16 @@
+.sidebar-btn {
+  max-height: 10%;
+  aspect-ratio: 1;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  border-radius: 5px;
+  padding: 5%;
+}
+
+.sidebar-btn:hover {
+  background-color: rgba(240, 248, 255, 0.15);
+}
+
+.sidebar-btn-img {
+  height: 100%;
+}
