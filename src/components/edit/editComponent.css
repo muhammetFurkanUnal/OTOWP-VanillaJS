@@ -1,0 +1,31 @@
+.edit {
+  display: none;
+  height: 95%;
+  width: 50%;
+  border-radius: 20px;
+  box-shadow: 0 0 20px black;
+}
+
+.edit-upper-div {
+  display: flex;
+  justify-content: flex-end;
+  height: min-content;
+  padding: 15px;
+  width: 100%;
+}
+
+.close-btn {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: rgba(255, 255, 255, 0.599);
+  font-size: 1em;
+  padding: 5px 8px;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  transition: all 0.12s ease;
+  
+}
+
+.close-btn:hover {
+  background-color: rgba(167, 167, 167, 0.218);
+}

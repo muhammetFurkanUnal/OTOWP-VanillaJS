@@ -4,8 +4,10 @@
 @import url("./components/sidebar/sidebarComponent.css");
 @import url("./components/sidebarButton/sidebarButtonComponent.css");
 @import url("./components/messagePlaceholder/messagePlaceholder.css");
-@import url("./components/messageContent/messageContentComponent.css");
+@import url("./components/rightContent/rightContentComponent.css");
 @import url("./components/messageBox/messageBoxComponent.css");
+@import url("./components/edit/editComponent.css");
+@import url("./components/settings/settingsComponent.css");
 
 * {
   margin: 0;

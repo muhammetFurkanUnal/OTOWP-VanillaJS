@@ -1,20 +1,30 @@
 import { MessageBoxComponent } from "../messageBox/messageBoxComponent.js";
 import { MessagePlaceholder } from "../messagePlaceHolder/messagePlaceHolder.js";
 import { lbState } from "../../states/listboxState.js";
+import { rightContentState } from "../../states/rightContentState.js";
 
-export function MessageContentComponent () {
+export function RightContentComponent () {
 
   // store right half contents in this div
-  const messageContentComponent = document.createElement("div");
-  messageContentComponent.className = "message-content-component";
+  const rightContentComponent = document.createElement("div");
+  rightContentComponent.className = "right-content-component";
   //
   // add right half contents
   const messagePlaceholder = MessagePlaceholder();
-  messageContentComponent.appendChild(messagePlaceholder);
+  rightContentComponent.appendChild(messagePlaceholder);
   //
   // add actual message sending UI 
   const messageBox = MessageBoxComponent();
-  messageContentComponent.appendChild(messageBox);
+  rightContentComponent.appendChild(messageBox);
+
+
+  // if edit button selected, hide this rightContentComponent
+  rightContentState.subscribe(({chosenDisplay}) => {
+    if (chosenDisplay !== "rightContent") 
+      rightContentComponent.style.display = "none";
+    else
+      rightContentComponent.style.display = "flex";
+  });
 
 
   // if any chat selected, display message UI 
@@ -31,5 +41,5 @@ export function MessageContentComponent () {
   });
   
 
-  return messageContentComponent;
+  return rightContentComponent;
 }

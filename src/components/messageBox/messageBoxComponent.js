@@ -1,6 +1,12 @@
+import { TextAreaService } from "../../services/textAreaService.js";
 
 export function MessageBoxComponent() {
 
+  // instances
+  const textAreaService = new TextAreaService();
+
+
+  // component
   const messagebox = document.createElement("div");
   messagebox.className = "messagebox";
 
@@ -31,7 +37,6 @@ export function MessageBoxComponent() {
   messageboxTextArea.className = "messagebox-textarea";
   messagebox.appendChild(messageboxTextArea);
 
-
   // add lower div
   const messageboxLowerDiv = document.createElement("div");
   messageboxLowerDiv.className = "messagebox-lower"
@@ -43,6 +48,9 @@ export function MessageBoxComponent() {
   //
   const sendBtn = document.createElement("button");
   sendBtn.className = "send-btn";
+  sendBtn.addEventListener("click", () => {
+    textAreaService.sendMessage(messageboxTextArea.value);
+  });
   sendBtnAlignHelperDiv.appendChild(sendBtn);
   //
   const sendBtnImg = document.createElement("img");

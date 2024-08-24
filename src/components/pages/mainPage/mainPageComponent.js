@@ -1,6 +1,7 @@
 import { Listbox } from "../../listbox/listboxComponent.js";
 import { Sidebar } from "../../sidebar/sidebarComponent.js";
-import { MessageContentComponent } from "../../messageContent/messageContentComponent.js";
+import { RightContentComponent } from "../../rightContent/rightContentComponent.js";
+import { EditComponent } from "../../edit/editComponent.js";
 
 export function mainPage () {
 
@@ -28,7 +29,9 @@ export function mainPage () {
   mainPage.appendChild(mainPageRightHalf);
   // 
   // fill right half
-  mainPageRightHalf.appendChild(MessageContentComponent());
+  mainPageRightHalf.appendChild(RightContentComponent());
+  //
+  mainPageRightHalf.appendChild(EditComponent());
   
 
 
