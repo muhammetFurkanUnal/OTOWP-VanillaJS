@@ -1,4 +1,5 @@
-import { SidebarButton } from "../sidebarButton/sidebarButton.js";
+import { lbState } from "../../states/listboxState.js";
+import { SidebarButton } from "../sidebarButton/sidebarButtonComponent.js";
 
 export function Sidebar() {
 
@@ -10,10 +11,12 @@ export function Sidebar() {
   sidebarUpperHalf.className = "sidebar-upper-half"
   sidebar.appendChild(sidebarUpperHalf);
   //
-  const sidebarBtn1 = SidebarButton("./assets/images/menu.png");
+  const sidebarBtn1 = SidebarButton("./assets/images/menu.png", {onClick: ()=>{
+    lbState.toggleLBVisible();
+  }});
   sidebarUpperHalf.appendChild(sidebarBtn1);
   //
-  const sidebarBtn2 = SidebarButton("./assets/images/plus.png", "70%", "80%");
+  const sidebarBtn2 = SidebarButton("./assets/images/plus.png", {imgHeight:"70%", alpha:"80%"});
   sidebarUpperHalf.appendChild(sidebarBtn2);
 
   // lowerdiv
@@ -21,10 +24,10 @@ export function Sidebar() {
   sidebarLowerHalf.className = "sidebar-lower-half";
   sidebar.appendChild(sidebarLowerHalf);
   //
-  const sidebarBtn3 = SidebarButton("./assets/images/info.png", "100%", "90%");
+  const sidebarBtn3 = SidebarButton("./assets/images/info.png", {imgHeight:"100%", alpha:"90%"});
   sidebarLowerHalf.appendChild(sidebarBtn3)
   //
-  const sidebarBtn4 = SidebarButton("./assets/images/settings.png", "70%", "80%");
+  const sidebarBtn4 = SidebarButton("./assets/images/settings.png", {imgHeight:"70%", alpha:"80%"});
   sidebarLowerHalf.appendChild(sidebarBtn4)
 
   return sidebar;

@@ -8,13 +8,13 @@
 
 .mainpage-left-half {
   display: flex;
-  width: 20%;
   z-index: 2;
+  max-width: 30%;
 }
 
 .mainpage-right-half {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 100%;
 }

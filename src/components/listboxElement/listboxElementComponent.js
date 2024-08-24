@@ -1,4 +1,4 @@
-import { selectLBElement, getLBElements, deselectLBElement, isAnyLBESelected } from "../../states/listboxState.js";
+import { lbState } from "../../states/listboxState.js";
 
 export function ListboxElement (innerText) {
 
@@ -8,8 +8,7 @@ export function ListboxElement (innerText) {
 
   listboxElement.addEventListener("click", ()=>{
     let isInNow = listboxElement.classList.toggle("listbox-element-selected");
-    isInNow ? selectLBElement(listboxElement) : deselectLBElement(listboxElement);
-    console.log(isAnyLBESelected());
+    isInNow ? lbState.selectLBElement(listboxElement) : lbState.deselectLBElement(listboxElement);
   });
 
   return listboxElement;

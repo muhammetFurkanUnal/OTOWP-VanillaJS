@@ -2,7 +2,7 @@
 @import url("./components/listboxElement/listboxElementComponent.css");
 @import url("./components/listbox/listboxComponent.css");
 @import url("./components/sidebar/sidebarComponent.css");
-@import url("./components/sidebarButton/sidebarButton.css");
+@import url("./components/sidebarButton/sidebarButtonComponent.css");
 @import url("./components/messagePlaceholder/messagePlaceholder.css");
 @import url("./components/messageContent/messageContentComponent.css");
 @import url("./components/messageBox/messageBoxComponent.css");

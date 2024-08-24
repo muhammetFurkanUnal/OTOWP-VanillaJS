@@ -1,6 +1,6 @@
 import { MessageBoxComponent } from "../messageBox/messageBoxComponent.js";
 import { MessagePlaceholder } from "../messagePlaceHolder/messagePlaceHolder.js";
-import { isAnyLBESelected, subscribeLBE } from "../../states/listboxState.js";
+import { lbState } from "../../states/listboxState.js";
 
 export function MessageContentComponent () {
 
@@ -18,8 +18,9 @@ export function MessageContentComponent () {
 
 
   // if any chat selected, display message UI 
-  subscribeLBE(()=>{
-    if (isAnyLBESelected()) {
+  lbState.subscribe(({selectedNodes})=>{
+    const isAnyLBESelected = selectedNodes.length === 0 ? false : true;
+    if (isAnyLBESelected) {
       messagePlaceholder.style.display = "none";
       messageBox.style.display = "flex";
     }

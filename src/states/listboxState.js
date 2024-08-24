@@ -1,38 +1,31 @@
-const state = {
-  selectedNodes : [],
+import { Observable } from "../core/Observable.js";
 
-}
+class ListboxState extends Observable {
 
-const observers = [];
+  constructor (state) {super(state);}
 
-export function subscribeLBE (observer) {
-  observers.push(observer);
-}
-
-function notifyObservers() {
-  observers.forEach(observer => {
-    observer();
-  });
-}
-
-export function selectLBElement (node) {
-  state.selectedNodes.push(node);
-  notifyObservers();
-}
-
-export function deselectLBElement (node) {
-  for (let i in state.selectedNodes) {
-    if (state.selectedNodes[i] === node) {
-      state.selectedNodes.splice(i, 1);
-    }
+  toggleLBVisible() {
+    this.state.isVisible = !this.state.isVisible;
+    this.notify();
   }
-  notifyObservers();
+
+  selectLBElement (node) {
+    this.state.selectedNodes.push(node);
+    this.notify();
+  }
+
+  deselectLBElement (node) {
+    for (let i in this.state.selectedNodes) {
+      if (this.state.selectedNodes[i] === node) {
+        this.state.selectedNodes.splice(i, 1);
+      }
+    }
+    this.notify();
+  }
+
 }
 
-export function getLBElements () {
-  return state.selectedNodes;
-}
-
-export function isAnyLBESelected() {
-  return state.selectedNodes.length === 0 ? false : true;
-}
+export const lbState = new ListboxState({
+  selectedNodes : [],
+  isVisible : true, 
+});

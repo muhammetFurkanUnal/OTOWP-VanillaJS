@@ -1,3 +1,4 @@
+import { lbState } from "../../states/listboxState.js";
 import { ListboxElement } from "../listboxElement/listboxElementComponent.js";
 
 export function Listbox () {
@@ -23,8 +24,17 @@ export function Listbox () {
 
   // add sample data
   for (let i of [...Array(50)]) {
-    listbox.appendChild(ListboxElement("Tübitak Bilgem Yazılım"));
+    listbox.appendChild(ListboxElement("Tübitak Bilgem Yazılım "));
   }
+
+  // visibility controller
+  lbState.subscribe(({isVisible}) => {
+    if (isVisible) 
+      listbox.style.display = "flex";
+    else 
+      listbox.style.display = "none";
+  });
+
 
   return listbox;
 }
