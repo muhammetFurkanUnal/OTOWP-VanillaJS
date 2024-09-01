@@ -2,6 +2,7 @@ import { Listbox } from "../../listbox/listboxComponent.js";
 import { Sidebar } from "../../sidebar/sidebarComponent.js";
 import { RightContentComponent } from "../../rightContent/rightContentComponent.js";
 import { EditComponent } from "../../edit/editComponent.js";
+import { SettingsComponent } from "../../settings/settingsComponent.js";
 
 export function mainPage () {
 
@@ -32,6 +33,8 @@ export function mainPage () {
   mainPageRightHalf.appendChild(RightContentComponent());
   //
   mainPageRightHalf.appendChild(EditComponent());
+  //
+  mainPageRightHalf.appendChild(SettingsComponent());
   
 
 

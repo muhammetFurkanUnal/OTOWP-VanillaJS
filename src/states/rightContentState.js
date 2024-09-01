@@ -11,6 +11,15 @@ class RightContentState extends Observable {
 
 }
 
+
 export const rightContentState = new RightContentState({
   chosenDisplay: "",
 });
+
+
+// use this constants object when a new display needs to be created 
+export const displays = {
+  rightContent : "rightContent",
+  edit : "edit",
+  settings : "settings",
+}

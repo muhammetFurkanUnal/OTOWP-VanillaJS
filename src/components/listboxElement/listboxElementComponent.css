@@ -1,6 +1,6 @@
 .listbox-element {
   text-align: left;
-  height: 10%;
+  /* height: 10%; */
   min-height: 6%;
   width: 100%;
   overflow: hidden;

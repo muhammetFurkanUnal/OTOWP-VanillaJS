@@ -1,4 +1,5 @@
 import { rightContentState } from "../../states/rightContentState.js";
+import { displays } from "../../states/rightContentState.js";
 
 export function EditComponent() {
 
@@ -14,13 +15,14 @@ export function EditComponent() {
   closeBtn.innerText = "x";
   closeBtn.className = "close-btn";
   closeBtn.addEventListener("click", () => {
-    rightContentState.setDisplay("rightContent");
+    rightContentState.setDisplay(displays.rightContent);
   });
   upperDiv.appendChild(closeBtn);
 
+
   // toggle display
   rightContentState.subscribe(({chosenDisplay}) => {
-    if (chosenDisplay !== "edit") 
+    if (chosenDisplay !== displays.edit) 
       editComponent.style.display = "none";
     else 
       editComponent.style.display = "flex";

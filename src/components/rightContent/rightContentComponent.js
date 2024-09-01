@@ -1,7 +1,7 @@
 import { MessageBoxComponent } from "../messageBox/messageBoxComponent.js";
 import { MessagePlaceholder } from "../messagePlaceHolder/messagePlaceHolder.js";
 import { lbState } from "../../states/listboxState.js";
-import { rightContentState } from "../../states/rightContentState.js";
+import { displays, rightContentState } from "../../states/rightContentState.js";
 
 export function RightContentComponent () {
 
@@ -20,7 +20,7 @@ export function RightContentComponent () {
 
   // if edit button selected, hide this rightContentComponent
   rightContentState.subscribe(({chosenDisplay}) => {
-    if (chosenDisplay !== "rightContent") 
+    if (chosenDisplay !== displays.rightContent) 
       rightContentComponent.style.display = "none";
     else
       rightContentComponent.style.display = "flex";

@@ -4,6 +4,7 @@
   width: 50%;
   border-radius: 20px;
   box-shadow: 0 0 20px black;
+  background-color: rgb(73, 73, 73);
 }
 
 .edit-upper-div {
@@ -23,7 +24,6 @@
   background-color: rgba(0, 0, 0, 0);
   border-radius: 5px;
   transition: all 0.12s ease;
-  
 }
 
 .close-btn:hover {

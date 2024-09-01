@@ -1,18 +1,26 @@
 import { lbState } from "../../states/listboxState.js";
 import { ListboxElement } from "../listboxElement/listboxElementComponent.js";
+import { Variables } from "../../core/variables.js";
 
 export function Listbox () {
+
+
+  // constants
+  const variables = new Variables();
   
+
   // create listbox frame
   const listbox = document.createElement("div");
   listbox.className = "listbox";
+
 
   // div for selectbox
   const selectBoxDiv = document.createElement("div");
   selectBoxDiv.className = "selectbox-div";
   listbox.appendChild(selectBoxDiv);
 
-  // selectbox for selecting group categories
+
+  // selectbox for selecting group tags
   const selectbox = document.createElement("select");
   selectbox.className = "selectbox";
   for (let i of [...Array(5)]) {
@@ -22,10 +30,23 @@ export function Listbox () {
   }
   selectBoxDiv.appendChild(selectbox);
 
-  // add sample data
-  for (let i of [...Array(50)]) {
-    listbox.appendChild(ListboxElement("Tübitak Bilgem Yazılım "));
-  }
+
+  // send http request to get group names
+  // TODO: move this process to service layer
+  fetch(variables.generateURL.getUsersAll())
+  .then((response)=>{
+    if (!response.ok) {
+      console.error("response not ok when fetching groups");
+    }
+
+    return response.json();
+  })
+  .then((data) => {
+    data.forEach(group => {
+      listbox.appendChild(ListboxElement(group.name));
+    });
+  })
+
 
   // visibility controller
   lbState.subscribe(({isVisible}) => {

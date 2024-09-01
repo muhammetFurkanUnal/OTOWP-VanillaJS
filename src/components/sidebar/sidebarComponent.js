@@ -1,5 +1,5 @@
 import { lbState } from "../../states/listboxState.js";
-import { rightContentState } from "../../states/rightContentState.js";
+import { displays, rightContentState } from "../../states/rightContentState.js";
 import { SidebarButton } from "../sidebarButton/sidebarButtonComponent.js";
 
 // toggling selected sidebar button
@@ -32,7 +32,7 @@ export function Sidebar() {
     imgHeight: "70%",
     alpha: "80%",
     onClick: () => {
-      rightContentState.setDisplay("edit");
+      rightContentState.setDisplay(displays.edit);
     },
   });
   sidebarUpperHalf.appendChild(editBtn);
@@ -52,15 +52,15 @@ export function Sidebar() {
     imgHeight: "70%",
     alpha: "80%",
     onClick: () => {
-      rightContentState.setDisplay("settings");
+      rightContentState.setDisplay(displays.settings);
     },
   });
   sidebarLowerHalf.appendChild(settingsBtn);
 
   // use chooseBtn
   rightContentState.subscribe(({ chosenDisplay }) => {
-    if (chosenDisplay === "edit") chooseBtn(editBtn);
-    else if (chosenDisplay === "settings") chooseBtn(settingsBtn);
+    if (chosenDisplay === displays.edit) chooseBtn(editBtn);
+    else if (chosenDisplay === displays.settings) chooseBtn(settingsBtn);
     else chooseBtn(document.createElement("button"));
   });
 
