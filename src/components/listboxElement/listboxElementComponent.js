@@ -1,14 +1,14 @@
 import { lbState } from "../../states/listboxState.js";
 
-export function ListboxElement (innerText) {
+export function ListboxElement (group) {
 
   const listboxElement = document.createElement("div");
   listboxElement.className = "listbox-element";
-  listboxElement.innerText = innerText;
+  listboxElement.innerText = group.name;
 
   listboxElement.addEventListener("click", ()=>{
-    let isInNow = listboxElement.classList.toggle("listbox-element-selected");
-    isInNow ? lbState.selectLBElement(listboxElement) : lbState.deselectLBElement(listboxElement);
+    let isSelected = listboxElement.classList.toggle("listbox-element-selected");
+    isSelected ? lbState.selectLBElement(listboxElement, group) : lbState.deselectLBElement(listboxElement, group);
   });
 
   return listboxElement;

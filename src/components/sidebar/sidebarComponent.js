@@ -1,3 +1,4 @@
+import { Injections } from "../../core/Injections.js";
 import { lbState } from "../../states/listboxState.js";
 import { displays, rightContentState } from "../../states/rightContentState.js";
 import { SidebarButton } from "../sidebarButton/sidebarButtonComponent.js";
@@ -14,6 +15,7 @@ function chooseBtn(btn) {
 
 export function Sidebar() {
   const sidebar = document.createElement("div");
+  const injections = new Injections();
   sidebar.className = "sidebar";
 
   // upperdiv
@@ -21,14 +23,14 @@ export function Sidebar() {
   sidebarUpperHalf.className = "sidebar-upper-half";
   sidebar.appendChild(sidebarUpperHalf);
   //
-  const menuBtn = SidebarButton("./assets/images/menu.png", {
+  const menuBtn = SidebarButton(injections.images + "menu.png", {
     onClick: () => {
       lbState.toggleLBVisible();
     },
   });
   sidebarUpperHalf.appendChild(menuBtn);
   //
-  const editBtn = SidebarButton("./assets/images/plus.png", {
+  const editBtn = SidebarButton(injections.images + "plus.png", {
     imgHeight: "70%",
     alpha: "80%",
     onClick: () => {
@@ -42,13 +44,13 @@ export function Sidebar() {
   sidebarLowerHalf.className = "sidebar-lower-half";
   sidebar.appendChild(sidebarLowerHalf);
   //
-  const infoBtn = SidebarButton("./assets/images/info.png", {
+  const infoBtn = SidebarButton(injections.images + "info.png", {
     imgHeight: "100%",
     alpha: "90%",
   });
   sidebarLowerHalf.appendChild(infoBtn);
   //
-  const settingsBtn = SidebarButton("./assets/images/settings.png", {
+  const settingsBtn = SidebarButton(injections.images + "settings.png", {
     imgHeight: "70%",
     alpha: "80%",
     onClick: () => {

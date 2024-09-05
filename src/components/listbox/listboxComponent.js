@@ -1,12 +1,16 @@
 import { lbState } from "../../states/listboxState.js";
 import { ListboxElement } from "../listboxElement/listboxElementComponent.js";
-import { Variables } from "../../core/variables.js";
+import { GroupsService } from "../../services/groupsService.js";
+import { TagsService } from "../../services/tagsService.js";
+import { UncheckBtn } from "../uncheckBtn/uncheckBtnComponent.js";
 
 export function Listbox () {
 
-
   // constants
-  const variables = new Variables();
+  const groupsService = new GroupsService();
+  const tagsService = new TagsService();
+  let groupsLoaded = false;
+  let groups = [];
   
 
   // create listbox frame
@@ -14,38 +18,45 @@ export function Listbox () {
   listbox.className = "listbox";
 
 
+  // SELECTBOX
   // div for selectbox
   const selectBoxDiv = document.createElement("div");
   selectBoxDiv.className = "selectbox-div";
   listbox.appendChild(selectBoxDiv);
-
-
+  //
   // selectbox for selecting group tags
   const selectbox = document.createElement("select");
   selectbox.className = "selectbox";
-  for (let i of [...Array(5)]) {
-    const opt = document.createElement("option");
-    opt.innerText = "naber";
-    selectbox.appendChild(opt);
-  }
   selectBoxDiv.appendChild(selectbox);
+  //
+  // add default selected option to selectbox
+  const defOption = document.createElement("option");
+  defOption.text = "- Etiket seçin -";
+  defOption.selected = true;
+  defOption.disabled = true;
+  selectbox.appendChild(defOption);
 
 
-  // send http request to get group names
-  // TODO: move this process to service layer
-  fetch(variables.generateURL.getUsersAll())
-  .then((response)=>{
-    if (!response.ok) {
-      console.error("response not ok when fetching groups");
-    }
-
-    return response.json();
-  })
-  .then((data) => {
-    data.forEach(group => {
-      listbox.appendChild(ListboxElement(group.name));
+  // SERVICE OPERATIONS
+  // get tags data from service layer
+  tagsService.getTags().then((tags) => {
+    tags.forEach((tag) => {
+      const option = document.createElement("option");
+      option.text = tag.name;
+      selectbox.appendChild(option);
     });
+  });
+  //
+  // get groups data from service layer
+  groupsService.getGroups().then((data) => {
+    groups = data;
+    groupsLoaded = true;
   })
+  .then(() => {
+    groups.forEach((group) => {
+      listbox.appendChild(ListboxElement(group));
+    });
+  });
 
 
   // visibility controller
@@ -55,6 +66,10 @@ export function Listbox () {
     else 
       listbox.style.display = "none";
   });
+
+
+  // uncheck button
+  listbox.appendChild(UncheckBtn());
 
 
   return listbox;

@@ -1,9 +1,11 @@
 import { TextAreaService } from "../../services/textAreaService.js";
+import { Injections } from "../../core/Injections.js";
 
 export function MessageBoxComponent() {
 
   // instances
   const textAreaService = new TextAreaService();
+  const injections = new Injections();
 
 
   // component
@@ -16,7 +18,7 @@ export function MessageBoxComponent() {
   //
   const icon = document.createElement("img");
   icon.className = "messagebox-icon";
-  icon.src = "./assets/images/otowp.ico";
+  icon.src = injections.images + "otowp.ico";
   messageboxLabelDiv.appendChild(icon);
   //
   const labelText = document.createElement("span");
@@ -54,7 +56,7 @@ export function MessageBoxComponent() {
   sendBtnAlignHelperDiv.appendChild(sendBtn);
   //
   const sendBtnImg = document.createElement("img");
-  sendBtnImg.src = "./assets/images/send.png";
+  sendBtnImg.src = injections.images + "send.png";
   sendBtnImg.style.height = "100%";
   sendBtn.appendChild(sendBtnImg);
   // 

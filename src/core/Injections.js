@@ -1,6 +1,8 @@
-export class Variables {
+export class Injections {
 
   constructor() {
+
+    this.images = "./assets/images/";
 
     this.backend = {
       host : "localhost",
@@ -17,7 +19,8 @@ export class Variables {
     }
 
     this.generateURL = {
-      getUsersAll : () => (this.API.base + this.endpoints.groups),
+      getGroupsAll : () => this.API.base + this.endpoints.groups,
+      getTagsAll : () => this.API.base + this.endpoints.tags,
     }
 
   }

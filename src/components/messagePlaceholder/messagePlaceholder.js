@@ -1,5 +1,8 @@
+import { Injections } from "../../core/Injections.js";
 
 export function MessagePlaceholder () {
+
+  const injections = new Injections();
 
   const messagePlaceholder = document.createElement("div");
   messagePlaceholder.className = "message-placeholder";
@@ -8,7 +11,7 @@ export function MessagePlaceholder () {
   // add image
   const otowpIcon = document.createElement("img");
   otowpIcon.className = "icon";
-  otowpIcon.src = "./assets/images/otowp.ico";
+  otowpIcon.src = injections.images + "otowp.ico";
   messagePlaceholder.appendChild(otowpIcon);
   // 
   // add text

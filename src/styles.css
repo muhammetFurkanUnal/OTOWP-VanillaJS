@@ -8,6 +8,7 @@
 @import url("./components/messageBox/messageBoxComponent.css");
 @import url("./components/edit/editComponent.css");
 @import url("./components/settings/settingsComponent.css");
+@import url("./components/uncheckBtn/uncheckBtnComponent.css");
 
 * {
   margin: 0;

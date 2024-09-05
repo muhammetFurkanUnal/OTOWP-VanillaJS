@@ -27,7 +27,7 @@ export function RightContentComponent () {
   });
 
 
-  // if any chat selected, display message UI 
+  // if any group selected, display message UI 
   lbState.subscribe(({selectedNodes})=>{
     const isAnyLBESelected = selectedNodes.length === 0 ? false : true;
     if (isAnyLBESelected) {

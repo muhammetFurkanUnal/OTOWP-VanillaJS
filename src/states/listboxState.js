@@ -9,8 +9,9 @@ class ListboxState extends Observable {
     this.notify();
   }
 
-  selectLBElement (node) {
+  selectLBElement (node, group) {
     this.state.selectedNodes.push(node);
+    this.state.selectedGroups.push(group);
     this.notify();
   }
 
@@ -18,8 +19,14 @@ class ListboxState extends Observable {
     for (let i in this.state.selectedNodes) {
       if (this.state.selectedNodes[i] === node) {
         this.state.selectedNodes.splice(i, 1);
+        this.state.selectedGroups.splice(i, 1);
       }
     }
+    this.notify();
+  }
+
+  deselectAll() {
+    this.state.selectedNodes = [];
     this.notify();
   }
 
@@ -27,5 +34,6 @@ class ListboxState extends Observable {
 
 export const lbState = new ListboxState({
   selectedNodes : [],
+  selectedGroups : [],
   isVisible : true, 
 });
