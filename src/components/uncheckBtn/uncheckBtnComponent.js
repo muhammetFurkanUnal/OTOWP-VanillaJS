@@ -5,7 +5,7 @@ export function UncheckBtn() {
 
   // constants
   const injections = new Injections();
-  let _selectedNodes = [];
+  let _selectedNodes = new Set();
 
   const uncheck = document.createElement("div");
   uncheck.className = "uncheck";
@@ -18,7 +18,7 @@ export function UncheckBtn() {
 
   // only visible if at least one group selected
   lbState.subscribe(({selectedNodes}) => {
-    if (selectedNodes.length > 0) {
+    if (selectedNodes.size > 0) {
       // uncheck.style.display = "flex";
       uncheck.style.opacity = 1;
     } 

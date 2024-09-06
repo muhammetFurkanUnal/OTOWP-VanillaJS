@@ -29,7 +29,7 @@ export function RightContentComponent () {
 
   // if any group selected, display message UI 
   lbState.subscribe(({selectedNodes})=>{
-    const isAnyLBESelected = selectedNodes.length === 0 ? false : true;
+    const isAnyLBESelected = selectedNodes.size === 0 ? false : true;
     if (isAnyLBESelected) {
       messagePlaceholder.style.display = "none";
       messageBox.style.display = "flex";

@@ -11,6 +11,12 @@ export function Listbox () {
   const tagsService = new TagsService();
   let groupsLoaded = false;
   let groups = [];
+  let _selectedNodes = new Set();
+
+  // bind selectedNodes to global state of them in lisbox comp
+  lbState.subscribe(({ selectedNodes}) => {
+    _selectedNodes = selectedNodes;
+  });
   
 
   // create listbox frame
@@ -27,6 +33,19 @@ export function Listbox () {
   // selectbox for selecting group tags
   const selectbox = document.createElement("select");
   selectbox.className = "selectbox";
+  selectbox.addEventListener("change", (event) => {
+    const selected = event.target.options[event.target.selectedIndex].innerText;
+    listbox.childNodes.forEach((node) => {
+      if (typeof node.group !== "undefined") {
+        node.group.tags.forEach((tag) => {
+          if (tag.name === selected) {
+            node.classList.add("listbox-element-selected");
+            lbState.selectLBElement(node);
+          }
+        });
+      }
+    });
+  });
   selectBoxDiv.appendChild(selectbox);
   //
   // add default selected option to selectbox

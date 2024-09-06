@@ -5,6 +5,7 @@ export function ListboxElement (group) {
   const listboxElement = document.createElement("div");
   listboxElement.className = "listbox-element";
   listboxElement.innerText = group.name;
+  listboxElement.group = group;
 
   // select or deselect lb element.
   //
@@ -17,7 +18,7 @@ export function ListboxElement (group) {
   // whenever selecting or deselecting needed, dont forget these two process.
   listboxElement.addEventListener("click", ()=>{
     let isSelected = listboxElement.classList.toggle("listbox-element-selected");
-    isSelected ? lbState.selectLBElement(listboxElement, group) : lbState.deselectLBElement(listboxElement, group);
+    isSelected ? lbState.selectLBElement(listboxElement) : lbState.deselectLBElement(listboxElement);
   });
 
   return listboxElement;

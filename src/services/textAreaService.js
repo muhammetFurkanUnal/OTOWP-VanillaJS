@@ -6,13 +6,16 @@ export class TextAreaService {
 
   constructor () {
     this.injections = new Injections();
-    this.selectedGroups = [];
-    lbState.subscribe(({selectedGroups}) => {
-      this.selectedGroups = selectedGroups;
-    })
+    lbState.subscribe(({selectedNodes}) => {
+      this.selectedNodes = selectedNodes;
+    });
   }
 
   sendMessage(message) {
+    this.selectedGroups = new Set();
+    for (let i of this.selectedNodes) {
+      this.selectedGroups.add(i.group);
+    }
     const mDTO = new MessageDTO(message, this.selectedGroups);
     fetch(this.injections.generateURL.postMessage(), {
       method: "POST", 
