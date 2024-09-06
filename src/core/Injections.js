@@ -12,6 +12,7 @@ export class Injections {
     this.endpoints = {
       groups : "groups",
       tags: "tags",
+      sendMessage: "send-message"
     }
 
     this.API = {
@@ -21,6 +22,7 @@ export class Injections {
     this.generateURL = {
       getGroupsAll : () => this.API.base + this.endpoints.groups,
       getTagsAll : () => this.API.base + this.endpoints.tags,
+      postMessage : () => this.API.base + this.endpoints.sendMessage,
     }
 
   }
