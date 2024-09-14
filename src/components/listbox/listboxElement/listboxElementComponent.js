@@ -1,4 +1,4 @@
-import { lbState } from "../../states/listboxState.js";
+import { lbState } from "../../../states/listboxState.js";
 
 export function ListboxElement (group) {
 

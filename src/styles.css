@@ -1,5 +1,5 @@
 @import url("./components/pages/mainPage/mainPageComponent.css");
-@import url("./components/listboxElement/listboxElementComponent.css");
+@import url("./components/listbox/listboxElement/listboxElementComponent.css");
 @import url("./components/listbox/listboxComponent.css");
 @import url("./components/sidebar/sidebarComponent.css");
 @import url("./components/sidebarButton/sidebarButtonComponent.css");
@@ -9,6 +9,12 @@
 @import url("./components/edit/editComponent.css");
 @import url("./components/settings/settingsComponent.css");
 @import url("./components/uncheckBtn/uncheckBtnComponent.css");
+@import url("./components/edit/addNewGroup/addNewGroupComponent.css");
+@import url("./components/listbox/tagsSelect/tagsSelectComponent.css");
+@import url("./components/edit/addNewGroup/addedTag/addedTag.css");
+@import url("./components/edit/deleteGroup/deleteGroupComponent.css");
+@import url("./components/edit/addNewTag/addNewTagComponent.css");
+@import url("./components/edit/deleteTag/deleteTagComponent.css");
 
 * {
   margin: 0;

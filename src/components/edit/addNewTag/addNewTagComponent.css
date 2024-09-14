@@ -1,0 +1,54 @@
+.add-new-tag-div-frame {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.new-tag-title {
+  margin: 10px 30px;
+  color: rgb(240, 240, 240);
+}
+
+.add-new-tag-div {
+  display: flex;
+  justify-content: space-between;
+  gap: 3%;
+  padding: 25px;
+  background-color: rgb(38, 38, 38);
+  box-shadow: 0 0 10px black;
+  margin: 5px 20px;
+  border-radius: 20px;
+  flex-grow: 1;
+}
+
+.tag-name-input {
+  border-radius: 15px;
+  border: 0;
+  padding: 10px;
+  color: white;
+  background-color: rgb(121, 121, 121);
+  max-height: 50px;
+  width: max-content;
+  flex-grow: 1;
+}
+
+.tag-name-input:focus {
+  outline: none;
+}
+
+.tag-name-input::placeholder {
+  color: rgb(181, 181, 181);
+}
+
+#add-tag-btn {
+  margin: 15px 7px 10px auto;
+  width: min-content;
+  border-radius: 10px;
+  margin: 0;
+  box-shadow: 0 0 10px rgb(102, 255, 0);
+}
+
+#add-tag-btn:hover {
+  box-shadow: 0 0 0;
+}

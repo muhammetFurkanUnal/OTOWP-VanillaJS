@@ -1,0 +1,36 @@
+
+.selectbox {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(44, 44, 44);
+  color: white;
+  width: 80%;
+  max-width: 200px;
+  min-width: 160px;
+  padding: 10px;
+  border-radius: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+option {
+  padding: 10px;
+}
+
+.selectbox-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(27, 27, 27, 1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 20px;
+}
+
+.selectbox:focus {
+  outline: none;
+}
+
+

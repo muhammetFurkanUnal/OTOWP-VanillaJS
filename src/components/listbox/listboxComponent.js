@@ -1,8 +1,9 @@
 import { lbState } from "../../states/listboxState.js";
-import { ListboxElement } from "../listboxElement/listboxElementComponent.js";
+import { ListboxElement } from "./listboxElement/listboxElementComponent.js";
 import { GroupsService } from "../../services/groupsService.js";
 import { TagsService } from "../../services/tagsService.js";
 import { UncheckBtn } from "../uncheckBtn/uncheckBtnComponent.js";
+import { TagsSelect } from "./tagsSelect/tagsSelectComponent.js";
 
 export function Listbox () {
 
@@ -23,17 +24,8 @@ export function Listbox () {
   const listbox = document.createElement("div");
   listbox.className = "listbox";
 
-
-  // SELECTBOX
-  // div for selectbox
-  const selectBoxDiv = document.createElement("div");
-  selectBoxDiv.className = "selectbox-div";
-  listbox.appendChild(selectBoxDiv);
-  //
-  // selectbox for selecting group tags
-  const selectbox = document.createElement("select");
-  selectbox.className = "selectbox";
-  selectbox.addEventListener("change", (event) => {
+  // selectbox
+  const selecbox = TagsSelect({callback:(event) => {
     const selected = event.target.options[event.target.selectedIndex].innerText;
     listbox.childNodes.forEach((node) => {
       if (typeof node.group !== "undefined") {
@@ -45,27 +37,11 @@ export function Listbox () {
         });
       }
     });
-  });
-  selectBoxDiv.appendChild(selectbox);
-  //
-  // add default selected option to selectbox
-  const defOption = document.createElement("option");
-  defOption.text = "- Etiket seçin -";
-  defOption.selected = true;
-  defOption.disabled = true;
-  selectbox.appendChild(defOption);
+  }});
+  listbox.appendChild(selecbox);
 
 
   // SERVICE OPERATIONS
-  // get tags data from service layer
-  tagsService.getTags().then((tags) => {
-    tags.forEach((tag) => {
-      const option = document.createElement("option");
-      option.text = tag.name;
-      selectbox.appendChild(option);
-    });
-  });
-  //
   // get groups data from service layer
   groupsService.getGroups().then((data) => {
     groups = data;

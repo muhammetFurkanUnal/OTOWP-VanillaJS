@@ -1,0 +1,82 @@
+.add-new-group-div-frame {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.add-title {
+  margin: 10px 30px;
+  color: rgb(240, 240, 240);
+}
+
+.add-new-group-div {
+  padding: 20px;
+  background-color: rgb(38, 38, 38);
+  box-shadow: 0 0 10px black;
+  display: flex;
+  flex-direction: column;
+  margin: 5px 20px;
+  border-radius: 20px;
+  flex-grow: 1;
+}
+
+.group-name-input {
+  border-radius: 15px;
+  border: 0;
+  padding: 10px;
+  color: white;
+  background-color: rgb(121, 121, 121);
+  max-height: 50px;
+  width: max-content;
+  flex-grow: 1;
+}
+
+.group-name-input:focus {
+  outline: none;
+}
+
+.group-name-input::placeholder {
+  color: rgb(181, 181, 181);
+}
+
+.params-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3%;
+  margin: 5px;
+  width: 100%;
+}
+
+#add-selectbox {
+  width: min-content;
+  z-index: 0;
+  position: static;
+  padding: 0;
+}
+
+.tags-div {
+  display: none;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tags-div-text {
+  color: rgb(217, 217, 217);
+  margin: 10px;
+  font-size: 0.8em;
+  width: max-content;
+}
+
+#add-btn {
+  margin: 15px 7px 10px auto;
+  width: min-content;
+  border-radius: 10px;
+  margin: 0;
+  box-shadow: 0 0 10px rgb(102, 255, 0);
+}
+
+#add-btn:hover {
+  box-shadow: 0 0 0;
+}
